@@ -20,6 +20,6 @@
 </ul>
 
 <p>I will include a text file named <strong>"Description.txt"</strong>, where I will provide a description of each file.</p>
-<p> https://www.kaggle.com/competitions/challenges-in-representation-learning-facial-expression-recognition-challenge </p> 
+<p> Download the dataset from here: https://www.kaggle.com/competitions/challenges-in-representation-learning-facial-expression-recognition-challenge </p> 
 </body>
 </html>
