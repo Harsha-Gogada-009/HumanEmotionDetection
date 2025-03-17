@@ -1,0 +1,71 @@
+Facial Emotion Recognition - Project Overview
+This project aims to build a CNN-based deep learning model for facial emotion recognition using PyTorch. Below is a breakdown of how each file contributes to the overall model:
+
+📂 1. generate_data.ipynb
+Purpose: Prepares the dataset for training and validation.
+
+Key Functions:
+✅ Reads the original train.csv, which contains pixel values of images.
+✅ Splits the dataset into train.csv (for training) and val.csv (for validation).
+✅ Converts pixel data into 48×48 grayscale images and stores them in respective folders:
+
+📁 train/ → Training images (e.g., train4.jpg → Label 4)
+📁 val/ → Validation images
+🧠 2. deep_emotion.ipynb
+Purpose: Defines Deep_Emotion, a CNN-based model for facial emotion classification.
+
+Model Architecture:
+🔹 Convolutional Layers – Extract meaningful features from images.
+🔹 Batch Normalization & Pooling – Improve training stability and reduce dimensionality.
+🔹 Fully Connected Layers – Classify emotions into 7 categories.
+🔹 Spatial Transformer Network (STN) – Aligns facial features for better accuracy.
+
+👉 The model learns spatial transformations, deep feature extraction, and emotion classification.
+
+📜 3. data_loaders.ipynb
+Purpose: Loads and preprocesses image data using PyTorch.
+
+Components:
+📌 Plain_Dataset (PyTorch Dataset class)
+
+Reads image paths and labels from a CSV file.
+Applies transformations (e.g., normalization).
+Returns image & corresponding label when indexed.
+📌 Helper Function (eval_data_dataloader)
+
+Loads and displays an image with its label.
+Uses Matplotlib to visualize a sample image (e.g., index 10).
+👉 This script ensures seamless image loading & preprocessing for training.
+
+🎯 4. main.ipynb
+Purpose: The core training and evaluation script for the model.
+
+Workflow:
+🔹 Data Preprocessing:
+✔ Loads dataset utilities (Plain_Dataset, eval_data_dataloader).
+✔ Applies grayscale conversion, tensor transformation, and normalization.
+✔ Creates DataLoaders for batch processing.
+
+🔹 Model Training:
+✔ Loads the Deep_Emotion model and moves it to GPU (if available).
+✔ Uses CrossEntropyLoss and Adam optimizer.
+✔ Trains the model for 50 epochs, printing loss per epoch.
+✔ Saves the trained model as "deep_emotion_model.pth".
+
+🔹 Model Evaluation:
+✔ Loads the trained model and sets it to evaluation mode.
+✔ Computes validation accuracy on unseen data.
+✔ Outputs the training loss per epoch and the final validation accuracy.
+
+📌 Experimentation:
+You can tweak the following hyperparameters to optimize performance:
+✅ Number of epochs
+✅ Learning rates
+✅ Dropout layers
+✅ Different optimizers (e.g., SGD, RMSprop)
+✅ Loss functions
+
+🚀 Final Output:
+✅ Trained emotion classification model 🎭
+✅ Performance metrics & validation accuracy 📊
+✅ Optimized for real-world facial emotion recognition 🤖
