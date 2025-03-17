@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Human Emotion Detection</title>
 </head>
 <body>
 
